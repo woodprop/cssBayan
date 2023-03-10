@@ -14,3 +14,54 @@ html {
 h1 {
     margin: 0;
 }
+
+.wrapper {
+    width: 75%;
+    margin: 0 auto;
+}
+
+.header {
+    padding-top: 1.5rem;
+}
+
+.header__wrapper {
+    border-bottom: 0.15rem solid #000;
+}
+
+.accordion {
+    display: flex;
+    flex-direction: column;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 4px -2px rgba(0,0,0,0.5);
+}
+
+.accordion__item {
+    width: 100%;
+    overflow: hidden;
+}
+
+.item__label {
+    display: flex;
+    background: dimgrey;
+    cursor: pointer;
+}
+
+.item__content {
+    max-height: 0;
+    padding: 0 1em;
+    color: red;
+    background: white;
+    transition: all .35s;
+}
+
+
+
+
+input:checked + .item__label {
+
+}
+
+input:checked ~ .item__content {
+    max-height: 100vh;
+}
