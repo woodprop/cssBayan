@@ -38,17 +38,14 @@ h1 {
 
 .accordion__item {
     width: 100%;
-    overflow: hidden;
 }
 
 .accordion__item input {
-    display: block;
-    opacity: 0;
-    height: 0;
+    display: none;
 }
 
 .item__label {
-    display: flex;
+    /*display: flex;*/
     background: dimgrey;
     cursor: pointer;
 }
@@ -59,8 +56,13 @@ h1 {
     color: red;
     background: white;
     transition: all .5s ease;
+    overflow: hidden;
 }
 
+.accordion__item:hover .item__content {
+    max-height: 100vh;
+    padding: 1em;
+}
 
 
 
@@ -68,7 +70,7 @@ input:checked + .item__label {
 
 }
 
-input:checked ~ .item__content {
+input:checked ~ .item__label > .item__content {
     max-height: 100vh;
     padding: 1em;
 }
