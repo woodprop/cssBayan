@@ -41,6 +41,12 @@ h1 {
     overflow: hidden;
 }
 
+.accordion__item input {
+    display: block;
+    opacity: 0;
+    height: 0;
+}
+
 .item__label {
     display: flex;
     background: dimgrey;
@@ -52,7 +58,7 @@ h1 {
     padding: 0 1em;
     color: red;
     background: white;
-    transition: all .35s;
+    transition: all .5s ease;
 }
 
 
@@ -64,4 +70,5 @@ input:checked + .item__label {
 
 input:checked ~ .item__content {
     max-height: 100vh;
+    padding: 1em;
 }
