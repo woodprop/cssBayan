@@ -21,6 +21,7 @@ h1 {
 }
 
 .header {
+    margin-bottom: 2rem;
     padding-top: 1.5rem;
 }
 
@@ -31,13 +32,17 @@ h1 {
 .accordion {
     display: flex;
     flex-direction: column;
-    border-radius: 8px;
+    border-radius: 0.5rem;
     overflow: hidden;
-    box-shadow: 0 4px 4px -2px rgba(0,0,0,0.5);
+    box-shadow: 0 0.25rem 0.25rem -0.125rem rgba(0,0,0,0.5);
 }
 
 .accordion__item {
     width: 100%;
+}
+
+.accordion__item h3 {
+    margin-left: 1.5rem;
 }
 
 .accordion__item input {
@@ -45,18 +50,40 @@ h1 {
 }
 
 .item__label {
-    /*display: flex;*/
-    background: dimgrey;
+    display: block;
+    background: #ccc;
     cursor: pointer;
+    color: #353535;
+}
+
+
+.item__title-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.item__icon {
+    display: block;
+    opacity: 0;
+    font-size: 2rem;
+    padding: 0.3rem;
+    margin-right: 0.7rem;
+    transition: all 0.5s ease;
 }
 
 .item__content {
     max-height: 0;
     padding: 0 1em;
-    color: red;
     background: white;
-    transition: all .5s ease;
+    transition: all 0.5s ease;
     overflow: hidden;
+}
+
+.item__content > img {
+    display: block;
+    margin: 0 auto;
+    max-height: 20rem;
 }
 
 .accordion__item:hover .item__content {
@@ -65,12 +92,30 @@ h1 {
 }
 
 
-
-input:checked + .item__label {
-
-}
-
 input:checked ~ .item__label > .item__content {
     max-height: 100vh;
     padding: 1em;
 }
+
+input:checked ~ .item__label {
+    background: #154c79;
+    color: #fff;
+}
+
+input:checked ~ .item__label .item__icon,
+.accordion__item:hover .item__label .item__icon {
+    transform: rotate(45deg);
+}
+
+
+/* -----======= HOVER activates icons =======-----*/
+.accordion:hover .item__label > .item__title-container > .item__icon {
+    opacity: 1;
+}
+
+
+.accordion:hover .item__label {
+    background: #154c79;
+    color: #fff;
+}
+
