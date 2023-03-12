@@ -43,6 +43,7 @@ h1 {
 
 .accordion__item h3 {
     margin-left: 1.5rem;
+    font-size: 1.5rem;
 }
 
 .accordion__item input {
@@ -55,7 +56,6 @@ h1 {
     cursor: pointer;
     color: #353535;
 }
-
 
 .item__title-container {
     display: flex;
@@ -86,12 +86,6 @@ h1 {
     max-height: 20rem;
 }
 
-.accordion__item:hover .item__content {
-    max-height: 100vh;
-    padding: 1em;
-}
-
-
 input:checked ~ .item__label > .item__content {
     max-height: 100vh;
     padding: 1em;
@@ -102,20 +96,61 @@ input:checked ~ .item__label {
     color: #fff;
 }
 
-input:checked ~ .item__label .item__icon,
-.accordion__item:hover .item__label .item__icon {
+input:checked ~ .item__label .item__icon {
     transform: rotate(45deg);
 }
 
 
-/* -----======= HOVER activates icons =======-----*/
-.accordion:hover .item__label > .item__title-container > .item__icon {
-    opacity: 1;
+
+@media (hover: hover) {
+    .accordion:hover .item__label > .item__title-container > .item__icon {
+        opacity: 1;
+    }
+
+    .accordion__item:hover .item__content {
+        max-height: 100vh;
+        padding: 1em;
+    }
+
+    .accordion:hover .item__label {
+        background: #154c79;
+        color: #fff;
+    }
+
+    .accordion__item:hover .item__label .item__icon {
+        transform: rotate(45deg);
+    }
 }
 
-
-.accordion:hover .item__label {
-    background: #154c79;
-    color: #fff;
+@media screen and (max-width: 820px) {
+    h1 {
+        font-size: 1.7rem;
+    }
+    .wrapper {
+        width: 85%;
+    }
+    .item__content > img {
+        max-height: 15rem;
+        max-width: 100%;
+    }
+    .item__label h3 {
+        font-size: 1.2rem;
+        font-weight: 400;
+    }
 }
 
+@media screen and (max-width: 320px){
+    h1 {
+        font-size: 1.5rem;
+    }
+    .wrapper {
+        width: 95%;
+    }
+    .item__content > img {
+        max-height: 10rem;
+    }
+
+    .item__label h3 {
+        font-size: 0.9rem;
+    }
+}
